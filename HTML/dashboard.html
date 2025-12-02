@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../CSS/dashboardStyle.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex">
+            <aside class="sidebar bg-bage">
+                <h1 class="mb-5">Fleurina</h1>
+                <ul>
+                    <li onclick="showPage('users')" class="menu-item ">Users</li>
+                    <li onclick="showPage('productsManagement')" class="menu-item">Products Management</li>
+                    <li onclick="showPage('addEditProduct')" class="menu-item">Add / Edit Product</li>
+                    <li onclick="showPage('ordersManagement')" class="menu-item">ordersManagement</li>
+                    <li onclick="showPage('orderDetails')" class="menu-item">orderDetails</li>
+                    <li onclick="showPage('customers')" class="menu-item">Customers</li>
+                    <li onclick="showPage('message')" class="menu-item">Messages</li>
+                    <li onclick="showPage('adminsAccounts')" class="menu-item active">Admins Account</li>
+                </ul>
+            </aside>
+            
+            <div class="content">
+                <div class="page display-none" id="users">Users Page Content</div>
+                <div class="page display-none" id="productsManagement">Products Management content</div>
+                <div class="page display-none" id="addEditProduct" >Add and Edit Products Page Content</div>
+                <div class="page display-none" id="ordersManagement" >ordersManagement Page Content</div>
+                <div class="page display-none" id="orderDetails" >orderDetails Page Content</div>
+                <div class="page display-none" id="customers" >Customers Page Content</div>
+                <div class="page display-none" id="message" >Message Page Content</div>
+                <div class="page  container" id="adminsAccounts" >
+                    <h2 class="my-4">New Account</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
+                        <form action="">
+                            <div class="row mb-3">
+                                <div class="col-md-6 col-12">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6 col-12">
+                                    <label for="number" class="form-label">Number</label>
+                                    <input type="number" class="form-control" id="number" placeholder="Enter number" required>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="px-2 py-2 rounded bg-green text-white mb-3">Add Account</button>
+                        </form>
+                    </div>
+                    <h2 class="my-4">Admins Accounts</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Number</th>
+                                <th>Password</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Huda Magdy</td>
+                                <td>hudamagdy205@gmail.com</td>
+                                <td>+20108706761</td>
+                                <td>********</td>
+                                <td>admin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

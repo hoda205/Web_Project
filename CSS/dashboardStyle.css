@@ -1,0 +1,81 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: solid 2px transparent ;
+}
+
+/* Global Style  */
+.display-none {
+    display: none;
+}
+
+.bg-bage {
+    background: #FFFAF0 ;
+}
+
+.bg-pink {
+    background: #f8c1d0 ;
+}
+
+.bg-green {
+    background: #A3B18A ;
+}
+
+/* Cutum Style  */
+.sidebar h1 {
+    color: #f8c1d0;
+}
+
+.sidebar {
+    background: #FFFAF0;
+    width: 17%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar li {
+    padding: 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.sidebar li:hover {
+    background: #FFE4E1;
+}
+
+.menu-item {
+    transition: background-color 0.3s;
+}
+
+.active {
+    background-color: #f8c1d0;
+    color: white;
+}
+
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-image: url('../img/background_dashboard.png');
+    background-size: cover;
+    background-position: center;
+}
+#adminsAccounts form button {
+    transition: background-color 0.3s, color 0.3s;
+}
+#adminsAccounts form button:hover {
+    background-color: transparent ;
+    color: #A3B18A !important;
+    border-color: #A3B18A ;
+}
