@@ -67,7 +67,7 @@ button {
 .content {
     flex-grow: 1;
     padding: 20px;
-    background-image: url('../img/background_dashboard.png');
+    background-image: url('../images/background_dashboard.png');
     background-size: cover;
     background-position: center;
 }
