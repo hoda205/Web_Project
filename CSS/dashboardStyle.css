@@ -24,7 +24,7 @@ button {
 }
 
 .bg-pink {
-    background: #f8c1d0 ;
+    background: #FFE4E1 ;
 }
 
 .bg-green {
@@ -38,7 +38,7 @@ button {
 
 .sidebar {
     background: #FFFAF0;
-    width: 17%;
+    /* width: 17%; */
     height: 100vh;
     padding: 20px;
 }
@@ -74,8 +74,11 @@ button {
 #adminsAccounts form button {
     transition: background-color 0.3s, color 0.3s;
 }
-#adminsAccounts form button:hover {
+button:hover {
     background-color: transparent ;
     color: #A3B18A !important;
     border-color: #A3B18A ;
+}
+tr{
+    vertical-align:middle ;
 }

@@ -12,30 +12,164 @@
 
 <body>
     <main>
-        <div class="d-flex">
-            <aside class="sidebar bg-bage">
+        <div class="row">
+            <aside class="sidebar col-2 bg-bage">
                 <h1 class="mb-5">Fleurina</h1>
                 <ul>
-                    <li onclick="showPage('users')" class="menu-item ">Users</li>
-                    <li onclick="showPage('productsManagement')" class="menu-item">Products Management</li>
-                    <li onclick="showPage('addEditProduct')" class="menu-item">Add / Edit Product</li>
+                    <li onclick="showPage('productsManagement')" class="menu-item ">Products Management</li>
+                    <li onclick="showPage('addEditProduct')" class="menu-item ">Add / Edit Product</li>
                     <li onclick="showPage('ordersManagement')" class="menu-item">ordersManagement</li>
                     <li onclick="showPage('orderDetails')" class="menu-item">orderDetails</li>
                     <li onclick="showPage('customers')" class="menu-item">Customers</li>
-                    <li onclick="showPage('message')" class="menu-item">Messages</li>
-                    <li onclick="showPage('adminsAccounts')" class="menu-item active">Admins Account</li>
+                    <li onclick="showPage('message')" class="menu-item active">Messages</li>
+                    <li onclick="showPage('adminsAccounts')" class="menu-item ">Admins Account</li>
                 </ul>
             </aside>
             
-            <div class="content">
-                <div class="page display-none" id="users">Users Page Content</div>
-                <div class="page display-none" id="productsManagement">Products Management content</div>
-                <div class="page display-none" id="addEditProduct" >Add and Edit Products Page Content</div>
-                <div class="page display-none" id="ordersManagement" >ordersManagement Page Content</div>
+            <div class="content col-10">
+                <div class="page display-none" id="productsManagement">
+                    <h2 class="my-4 ">Product Management</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow ">
+                        <div class="d-flex  justify-content-between align-items-center">
+                            <input type="text" class="form-control w-25 ">
+                            <button class="px-2 py-2 rounded bg-green text-white mb-3 ">Add New Product</button>
+                        </div>
+                        <table class="table table-striped rounded">
+                            <thead class="rounded">
+                                <tr class="bg-pink">
+                                    <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody  >
+                                <tr class="">
+                                    <td><img src="../img/background_dashboard.png" width="100px"></td>
+                                <td>Flowers</td>
+                                <td>50$</td>
+                                <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            
+                        
+                    </div>
+                </div>
+                <div class="page display-none" id="addEditProduct" >
+                    <h2 class="my-4">Add /Edit Product</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
+                        <form action="#">
+                            <div class="row mb-3">
+                                <div class=" col">
+                                    <label for="pName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="pName"  required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class=" col">
+                                    <label for="pDisc" class="form-label">Discription</label>
+                                    <textarea name="" id="pDisc" class="form-control" required></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class=" col-3">
+                                    <label for="pPrice" class="form-label">Price</label>
+                                    <input type="number" class="form-control" id="pPrice"  required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class=" col-4">
+                                    <label for="pImg" class="form-label">Price</label>
+                                    <input type="file" class="form-control" id="pImg" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="px-4 py-1 rounded bg-green text-white mb-3">Save</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="page display-none" id="ordersManagement" >
+                    <h2 class="my-4">Order Management</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
+                        <table class="table table-striped">
+                            <thead class="bg-pink">
+                                <tr>
+                                    <th>Order Id</th>
+                                    <th>Customer Name</th>
+                                    <th>Phone</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Huda</td>
+                                    <td>+20108706761</td>
+                                    <td>Accept</td>
+                                    <td>500$</td>
+                                    <td>Add Delete</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="page display-none" id="orderDetails" >orderDetails Page Content</div>
-                <div class="page display-none" id="customers" >Customers Page Content</div>
-                <div class="page display-none" id="message" >Message Page Content</div>
-                <div class="page  container" id="adminsAccounts" >
+                <div class="page display-none" id="customers" >
+                    <h2 class="my-4">Customers Account</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
+                        <div class="d-flex  justify-content-end align-items-center">
+                            <button class="px-3 py-2 rounded bg-green text-white mb-3 ">Register</button>
+                        </div>
+                        <table class="table table-striped">
+                            <thead class="bg-pink">
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Huda</td>
+                                    <td>hudamagdy205@gmial.com</td>
+                                    <td>+20108706761</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="page " id="message" >
+                    <h2 class="my-4">Message</h2>
+                    <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
+                        <table class="table table-striped">
+                            <thead class="bg-pink">
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Huda</td>
+                                    <td>hudamagdy205@gmial.com</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic laudantium labore alias corporis officia perferendis quae dignissimos sit soluta quos!</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="page display-none  container" id="adminsAccounts" >
                     <h2 class="my-4">New Account</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <form action="">
@@ -72,6 +206,7 @@
                                 <th>Number</th>
                                 <th>Password</th>
                                 <th>Role</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,6 +217,8 @@
                                 <td>+20108706761</td>
                                 <td>********</td>
                                 <td>admin</td>
+                                <!-- ايقون التعديل و المسح -->
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
