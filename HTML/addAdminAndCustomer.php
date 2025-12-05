@@ -29,11 +29,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-md-6 col-12">
-                            <label for="number" class="form-label">Number</label>
-                            <input name="Number" type="number" class="form-control" id="number" placeholder="Enter number" <?php echo !isset($_GET['id'])? 'required':''; ?>>
-                        </div>
-                        <div class="col-md-6 col-12">
+                        <div class="col-12">
                             <label for="password" class="form-label">Password</label>
                             <input name="Password" type="password" class="form-control" id="password" placeholder="Enter password"
                                 <?php echo !isset($_GET['id'])? 'required':''; ?>>

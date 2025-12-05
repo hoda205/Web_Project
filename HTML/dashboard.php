@@ -37,8 +37,8 @@ include '../PHP/select.php'
                 <div class="page display-none" id="productsManagement">
                     <h2 class="my-4 ">Product Management</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow ">
-                        <div class="d-flex  justify-content-between align-items-center">
-                            <input type="text" class="form-control w-25 ">
+                        <div class="d-flex  justify-content-end align-items-center">
+                            
                             <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAndEditeProducts.php">New Item</a>
                         </div>
                         <table class="table table-striped rounded">
@@ -151,7 +151,6 @@ include '../PHP/select.php'
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -163,7 +162,6 @@ include '../PHP/select.php'
                                     <td><?php echo $row['User_id']; ?></td>
                                     <td><?php echo $row['Name']; ?></td>
                                     <td><?php echo $row['Email']; ?></td>
-                                    <td><?php echo $row['Number']; ?></td>
                                     <td>
                                         <a href="./addAdminAndCustomer.php?id=<?php echo $row['User_id']; ?>" class="text-black"><i class="fa-solid fa-pen-to-square "></i></a>
                                         <a href="../PHP/delete.php?id=<?php echo $row['User_id']?>&table=users&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
@@ -188,7 +186,6 @@ include '../PHP/select.php'
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -200,7 +197,6 @@ include '../PHP/select.php'
                                     <td><?php echo $row['User_id']; ?></td>
                                     <td><?php echo $row['Name']; ?></td>
                                     <td><?php echo $row['Email']; ?></td>
-                                    <td><?php echo $row['Number']; ?></td>
                                     <td>
                                         <a href="./addAdminAndCustomer.php?id=<?php echo $row['User_id']; ?>" class="text-black"><i class="fa-solid fa-pen-to-square "></i></a>
                                         <a href="../PHP/delete.php?id=<?php echo $row['User_id']?>&table=users&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
