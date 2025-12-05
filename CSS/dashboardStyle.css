@@ -9,8 +9,8 @@ ul {
     padding: 0;
     margin: 0;
 }
-
-button {
+a
+,button {
     border: solid 2px transparent ;
 }
 
@@ -22,7 +22,9 @@ button {
 .bg-bage {
     background: #FFFAF0 ;
 }
-
+.text-black{
+    color: black;
+}
 .bg-pink {
     background: #FFE4E1 ;
 }
@@ -74,7 +76,8 @@ button {
 #adminsAccounts form button {
     transition: background-color 0.3s, color 0.3s;
 }
-button:hover {
+a:hover
+,button:hover {
     background-color: transparent ;
     color: #A3B18A !important;
     border-color: #A3B18A ;
