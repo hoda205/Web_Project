@@ -14,4 +14,6 @@ ON m.User_id = u.User_id
 ";
 $messages = mysqli_query($conn,$sql);
 
+$sql = "SELECT * FROM products";
+$products = mysqli_query($conn,$sql);
 ?>
