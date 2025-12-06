@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
                             <label for="pDisc" class="form-label">Discription</label>
                             <textarea name="pDisc" id="pDisc" class="form-control" <?php echo !isset($_GET['id'])? 'required':''; ?> 
                                 ><?php echo $descValue;?></textarea>
-                        </div>
+                        </div>+
                     </div>
                     <div class="row mb-3">
                         <div class=" col-3">
