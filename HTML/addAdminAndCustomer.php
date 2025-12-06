@@ -19,11 +19,13 @@
                     
                     <input type="text" name="Id" value="<?php echo isset($_GET['id'])? $_GET['id']:''; ?>" hidden readonly>
                     <div class="row mb-3">
-                        <div class="col-md-6 col-12">
+                        <div class="col-12">
                             <label for="username" class="form-label">Username</label>
                             <input name="Username" type="text" class="form-control" id="username" placeholder="Enter username" <?php echo !isset($_GET['id'])? 'required':''; ?> >
                         </div>
-                        <div class="col-md-6 col-12">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
                             <label for="email" class="form-label">Email</label>
                             <input name="Email" type="email" class="form-control" id="email" placeholder="Enter email" <?php echo !isset($_GET['id'])? 'required':''; ?>>
                         </div>
@@ -36,10 +38,10 @@
                         </div>
                     </div>
                     <div class=" mb-3">
-                            <input type="radio" name="Role" id="admin" value="admin"  <?php echo !isset($_GET['id'])? 'checked':''; ?>>
+                            <input type="radio" name="Role" id="admin" value="admin"  <?php echo !isset($_GET['id'])&& isset($_GET['isadmin'])? 'checked':''; ?>>
                             <label  for="admin" class="form-label">Admin</label>
                         
-                            <input type="radio" name="Role" id="customer" value="customer" class="ms-4">
+                            <input type="radio" name="Role" id="customer" value="customer" class="ms-4"<?php echo  isset($_GET['iscustomer'])? 'checked':''; ?>>
                             <label for="customer" class="form-label">Customer</label>
                         
                     </div>

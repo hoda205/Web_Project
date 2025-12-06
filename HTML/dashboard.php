@@ -22,12 +22,11 @@ include '../PHP/select.php'
             <aside class="sidebar col-2 bg-bage">
                 <h1 class="mb-5">Fleurina</h1>
                 <ul>
-                    <li onclick="showPage('productsManagement')" class="menu-item ">Products Management</li>
-                    <li onclick="showPage('ordersManagement')" class="menu-item">ordersManagement</li>
-                    <li onclick="showPage('orderDetails')" class="menu-item">orderDetails</li>
-                    <li onclick="showPage('message')" class="menu-item ">Messages</li>
-                    <li onclick="showPage('adminsAccounts')" class="menu-item ">Admins Account</li>
-                    <li onclick="showPage('customers')" class="menu-item active">Customers Account</li>
+                    <li onclick="showPage('productsManagement')" class="menu-item" data-section="productsManagement">Products Management</li>
+                    <li onclick="showPage('ordersManagement')" class="menu-item" data-section="ordersManagement">ordersManagement</li>
+                    <li onclick="showPage('message')" class="menu-item" data-section="message">Messages</li>
+                    <li onclick="showPage('adminsAccounts')" class="menu-item" data-section="adminsAccounts">Admins Account</li>
+                    <li onclick="showPage('customers')" class="menu-item" data-section="customers">Customers Account</li>
                 </ul>
             </aside>    
             <!-- Sidebar End -->
@@ -72,13 +71,13 @@ include '../PHP/select.php'
                 </div>
                 <!-- Products Management End -->
                 <!-- Order Management Start -->
-                <div class="page display-none" id="ordersManagement">
+                <div class="page " id="ordersManagement">
                     <h2 class="my-4">Order Management</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <table class="table table-striped">
                             <thead class="bg-pink">
                                 <tr>
-                                    <th>Order Id</th>
+                                    <th>#</th>
                                     <th>Customer Name</th>
                                     <th>Phone</th>
                                     <th>Status</th>
@@ -87,24 +86,36 @@ include '../PHP/select.php'
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Huda</td>
-                                    <td>+20108706761</td>
-                                    <td>Accept</td>
-                                    <td>500$</td>
-                                    <td>Add Delete</td>
-                                </tr>
+                                <tbody>
+                                <?php while($row = mysqli_fetch_assoc($orders)): ?>
+                                    <tr>
+                                        <td><?php echo $row['Order_Id']; ?></td>
+                                        <td><?php echo $row['Customer_Name']; ?></td>
+                                        <td><?php echo $row['Phone']; ?></td>
+                                        <td>
+                                            <?php 
+                                            if($row['Status'] == 'Accepted') echo '<span class="badge bg-success">Accepted</span>';
+                                            elseif($row['Status'] == 'Rejected') echo '<span class="badge bg-danger">Rejected</span>';
+                                            else echo '<span class="badge bg-warning">Pending</span>';
+                                            ?>
+                                        </td>
+                                        <td><?php echo $row['Total']; ?>$</td>
+                                        <td >
+                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Accepted" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-check text-success"></i></a>
+                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Rejected" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-xmark text-danger text-decoration-none "></i></a>
+                                            <a href="../PHP/delete.php?id=<?php echo $row['Order_Id']?>&table=order&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
+                                            <a class="px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#">Show</a>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <!-- Order Management End -->
-                <!-- Order Details Start  -->
-                <div class="page display-none" id="orderDetails">orderDetails Page Content</div>
-                <!-- Order Details End  -->
                 <!-- Message Start  -->
-                <div class="page " id="message">
+                <!-- فاضل زرار ال show -->
+                <div class="page display-none" id="message">
                     <h2 class="my-4">Message</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <table class="table table-striped">
@@ -113,7 +124,6 @@ include '../PHP/select.php'
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Message</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -125,11 +135,10 @@ include '../PHP/select.php'
                                     <td><?php echo $row['Id'] ?></td>
                                     <td><?php echo $row['Name'] ?></td>
                                     <td><?php echo $row['Email'] ?></td>
-                                    <td>
-                                        <div ><?php echo $row['Content'] ?></div>
-                                    </td>
                                     <td >
+                                        <a class="px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#z">Show</a>
                                         <a href="../PHP/delete.php?id=<?php echo $row['Id']?>&table=messages&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
+
                                     </td>
                                     </tr>
                                     <?php  endwhile; ?>
@@ -143,7 +152,7 @@ include '../PHP/select.php'
                     <h2 class="my-4">Admins Accounts</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <div class="d-flex  justify-content-end align-items-center">
-                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php">New Account</a>
+                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?isadmin=1">New Account</a>
                         </div>
                         <table class="table table-striped">
                             <thead class="bg-pink">
@@ -178,7 +187,7 @@ include '../PHP/select.php'
                     <h2 class="my-4">Customers Account</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <div class="d-flex  justify-content-end align-items-center">
-                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php">New Account</a>
+                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?iscustomer=1">New Account</a>
                         </div>
                         <table class="table table-striped">
                             <thead class="bg-pink">
