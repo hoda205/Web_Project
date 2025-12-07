@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
 
     <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
-    https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap
+    <!-- https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 </head>
@@ -74,26 +74,26 @@
        </div>
      </div>
      
-    <form>
+    <form action="submitContact.php" method="post">
            <div class="row mt-5">
              <div class="col-md-4">
                <div class="form-group2">
                  <i class="fa-regular fa-user"></i>
-                 <input type="text" class="form-control2" id="name" placeholder="Name" required>
+                 <input type="text" class="form-control2" name="user_name" placeholder="Name" required>
                  
                </div>
              </div>
              <div class="col-md-4">
                <div class="form-group2">
                  <i class="fa-regular fa-envelope"></i>
-                 <input type="email" class="form-control2" id="email" placeholder="Email" required>
+                 <input type="email" class="form-control2" name="user_email" placeholder="Email" required>
                 
                </div>
              </div>
              <div class="col-md-4">
                 <div class="form-group2">
                    <i class="fa fa-pencil-alt"></i>
-                  <input type="text" class="form-control2" id="subject" placeholder="Subject">
+                  <input type="text" class="form-control2" name="user_subject" placeholder="Subject">
                   
                 </div>
              </div>
@@ -101,12 +101,12 @@
 
           <div class="form-group2">
              <i class="fa fa-pencil-alt" style="top: 30%; left:0%"></i>
-             <textarea class="form-control2 py-5 mt-4 w-100" id="message" rows="5"  placeholder="Your Message"></textarea>
+             <textarea class="form-control2 py-5 mt-4 w-100" name="user_message" rows="5"  placeholder="Your Message"></textarea>
           </div>
 
-          <button type="submit" class="btn2">Send Message</button>
+          <button type="submit" name="submit" class="btn2">Send Message</button>
           
-        </form>
+      </form>
    </div>
    </section>
 
@@ -153,6 +153,6 @@
   </footer>
 
     <script src="../JS/bootstrap.bundle.min.js"></script>
-    <script src="../JS/script.js"></script>
+    
 </body>
 </html>
