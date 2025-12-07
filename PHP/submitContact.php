@@ -14,14 +14,12 @@ if (isset($_POST['submit'])) {
     $stmt = mysqli_prepare($conn, $query);
 
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $subject, $message);
-
     if (mysqli_stmt_execute($stmt)) {
         header("Location: ../HTML/contact.php?success=1");
         exit;
     } else {
         echo "Error: " . mysqli_error($conn);
     }
-
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
