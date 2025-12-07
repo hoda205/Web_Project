@@ -7,11 +7,7 @@ $sql ="SELECT * FROM users WHERE Role ='admin'";
 $admins = mysqli_query($conn,$sql);
 
 $sql =
-"SELECT m.M_Id Id, u.Name Name, u.Email Email
-FROM messages m
-JOIN users u
-ON m.User_id = u.User_id
-";
+"SELECT * FROM messages ";
 // "SELECT m.M_Id Id, u.Name Name, u.Email Email, m.content Content
 // FROM messages m
 // JOIN users u

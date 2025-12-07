@@ -71,7 +71,7 @@ include '../PHP/select.php'
                 </div>
                 <!-- Products Management End -->
                 <!-- Order Management Start -->
-                <div class="page " id="ordersManagement">
+                <div class="page display-none" id="ordersManagement">
                     <h2 class="my-4">Order Management</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <table class="table table-striped">
@@ -124,6 +124,7 @@ include '../PHP/select.php'
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Subject</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -132,12 +133,13 @@ include '../PHP/select.php'
                                     while($row = mysqli_fetch_assoc($messages)):
                                 ?>
                                 <tr >
-                                    <td><?php echo $row['Id'] ?></td>
-                                    <td><?php echo $row['Name'] ?></td>
-                                    <td><?php echo $row['Email'] ?></td>
+                                    <td><?php echo $row['M_Id'] ?></td>
+                                    <td><?php echo $row['name'] ?></td>
+                                    <td><?php echo $row['email'] ?></td>
+                                    <td><?php echo $row['subject'] ?></td>
                                     <td >
-                                        <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#z">Show</a>
-                                        <a href="../PHP/delete.php?id=<?php echo $row['Id']?>&table=messages&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
+                                        <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="./messageDetails.php?messageId=<?php echo $row['M_Id']?>">Show</a>
+                                        <a href="../PHP/delete.php?id=<?php echo $row['M_Id']?>&table=messages&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
 
                                     </td>
                                     </tr>

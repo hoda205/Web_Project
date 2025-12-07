@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="row mb-3">
                         <div class=" col-4">
-                            <label for="pImg" class="form-label">Price</label>
+                            <label for="pImg" class="form-label">Image Of Product</label>
                             <input name="pImg" type="file" class="form-control" id="pImg" <?php echo !isset($_GET['id'])? 'required':''; ?>>
                         </div>
                     </div>
