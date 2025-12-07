@@ -273,32 +273,6 @@ footer:first-of-type {
   color: white;
   display: inline-block;  
 }
-
-.form-has-error {
-  border: 2px solid #ffc107;
-  padding: 20px;
-  border-radius: 0;
-  padding-bottom: 0%;
-}
-
-
-.error-message {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-
-#formError.text-secondary {
-  color: gray !important;
-  font-weight: 700;
-}
-
-
-.is-invalid {
-  border-color: red;
-}
-
 .section-title {
   position: relative;
   display: inline-block;
