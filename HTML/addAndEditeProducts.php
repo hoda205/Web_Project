@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
                     }
                     ?>
                     <button name="save" type="submit" class="px-4 py-1 rounded bg-green text-white mb-3">Save</button>
-                    <a href="./dashboard.php" class="px-4 py-2 rounded bg-green text-white mb-3 text-decoration-none">Back</a>
+                    <a href="./dashboard.php" class="px-4 py-2 rounded bg-green text-white mb-3 text-decoration-none ahover">Back</a>
                 </form>
             </div>
         </div>

@@ -38,7 +38,7 @@ include '../PHP/select.php'
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow ">
                         <div class="d-flex  justify-content-end align-items-center">
                             
-                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAndEditeProducts.php">New Item</a>
+                            <a class="ahover px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAndEditeProducts.php">New Item</a>
                         </div>
                         <table class="table table-striped rounded">
                             <thead class="rounded">
@@ -104,7 +104,7 @@ include '../PHP/select.php'
                                             <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Accepted" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-check text-success"></i></a>
                                             <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Rejected" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-xmark text-danger text-decoration-none "></i></a>
                                             <a href="../PHP/delete.php?id=<?php echo $row['Order_Id']?>&table=order&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
-                                            <a class="px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#">Show</a>
+                                            <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#">Show</a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
@@ -136,7 +136,7 @@ include '../PHP/select.php'
                                     <td><?php echo $row['Name'] ?></td>
                                     <td><?php echo $row['Email'] ?></td>
                                     <td >
-                                        <a class="px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#z">Show</a>
+                                        <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="#z">Show</a>
                                         <a href="../PHP/delete.php?id=<?php echo $row['Id']?>&table=messages&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
 
                                     </td>
@@ -152,7 +152,7 @@ include '../PHP/select.php'
                     <h2 class="my-4">Admins Accounts</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <div class="d-flex  justify-content-end align-items-center">
-                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?isadmin=1">New Account</a>
+                            <a class="ahover px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?isadmin=1">New Account</a>
                         </div>
                         <table class="table table-striped">
                             <thead class="bg-pink">
@@ -187,7 +187,7 @@ include '../PHP/select.php'
                     <h2 class="my-4">Customers Account</h2>
                     <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                         <div class="d-flex  justify-content-end align-items-center">
-                            <a class="px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?iscustomer=1">New Account</a>
+                            <a class="ahover px-3 py-2 rounded bg-green text-white mb-3 text-decoration-none" href="./addAdminAndCustomer.php?iscustomer=1">New Account</a>
                         </div>
                         <table class="table table-striped">
                             <thead class="bg-pink">

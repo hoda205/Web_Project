@@ -13,6 +13,9 @@ a
 ,button {
     border: solid 2px transparent ;
 }
+a:hover{
+    color:#A3B18A;
+}
 
 /* Global Style  */
 .display-none {
@@ -76,7 +79,7 @@ a
 #adminsAccounts form button {
     transition: background-color 0.3s, color 0.3s;
 }
-a:hover
+.ahover:hover
 ,button:hover {
     background-color: transparent ;
     color: #A3B18A !important;

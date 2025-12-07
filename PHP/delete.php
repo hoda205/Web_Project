@@ -8,9 +8,12 @@ $ids = [
     'carts' => 'O_Id'
 ];
 if(isset($_GET['id'])&& isset($_GET['table'])){
+    
+    if($_GET['table'] == 'products'){
     $sqlSelect = "SELECT * FROM `" . $_GET['table'] . "` WHERE " . $ids[$_GET['table']] . " = " . $_GET['id'];
     $result = mysqli_query($conn,$sqlSelect);
     $row = mysqli_fetch_assoc($result);
+    }
     $sql = "DELETE FROM `" . $_GET['table'] . "` WHERE " . $ids[$_GET['table']] . " = " . $_GET['id'];
     if(mysqli_query($conn,$sql)){
         if($_GET['table'] == 'products'){
