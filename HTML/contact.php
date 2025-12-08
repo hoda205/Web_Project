@@ -74,7 +74,7 @@
        </div>
      </div>
      
-    <form action="submitContact.php" method="post">
+    <form action="../PHP/submitContact.php" method="post">
            <div class="row mt-5">
              <div class="col-md-4">
                <div class="form-group2">

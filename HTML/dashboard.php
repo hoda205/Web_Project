@@ -140,7 +140,6 @@ include '../PHP/select.php'
                                     <td >
                                         <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="./messageDetails.php?messageId=<?php echo $row['M_Id']?>">Show</a>
                                         <a href="../PHP/delete.php?id=<?php echo $row['M_Id']?>&table=messages&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
-
                                     </td>
                                     </tr>
                                     <?php  endwhile; ?>
