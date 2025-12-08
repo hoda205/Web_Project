@@ -1,6 +1,6 @@
 /* Background */
 body, .navbar {
-  background-image: url('images/login3.jpg');
+  background-image: url('../images/login3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
