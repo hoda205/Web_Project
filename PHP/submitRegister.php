@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'conect.php';
 
 if (isset($_POST['register'])) {
 

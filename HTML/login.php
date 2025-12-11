@@ -25,22 +25,20 @@
         <h1>Welcome Back</h1>
         <p class="subtitle">Login to your account</p>
 
-        <form action="#">
+        <form action="../PHP/login.php" method="post">
             <div class="input-group">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="Email Address">
+                <input type="email" name="mail" placeholder="Email Address" required>
             </div>
 
             <div class="input-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" name="pass" placeholder="Password" required>
                 <a href="#" class="forgot">Forgot Password?</a>
             </div>
-
             <button class="login-btn">Login</button>
-
             <p class="register-text">
-                Don't have an account? <a href="#">Register</a>
+                Don't have an account? <a href="../HTML/register.php">Register</a>
             </p>
         </form>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'conect.php';
 $sql ="SELECT * FROM users WHERE Role ='customer'";
 $customers = mysqli_query($conn,$sql);
 

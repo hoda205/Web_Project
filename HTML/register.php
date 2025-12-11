@@ -82,7 +82,7 @@ if (isset($_GET['registered']) && $_GET['registered'] == 1) {
             <button type="submit" name="register" class="login-btn">Register</button>
 
             <p class="register-text">
-                Already have an account? <a href="login.html">Login</a>
+                Already have an account? <a href="login.php">Login</a>
             </p>
         </form>
     </div>
