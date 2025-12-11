@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conect.php';
+include 'connection.php';
 
 if(isset($_POST['mail']) && isset($_POST['pass'])) {
     

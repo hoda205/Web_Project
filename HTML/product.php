@@ -1,6 +1,25 @@
-
 <?php
 include '../PHP/select.php';
+session_start();
+include '../PHP/connection.php';
+include '../PHP/CartFunctions.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+        $_SESSION['user_id'] ;
+        header('Location: ../HTML/login.html');
+        exit();
+    }
+
+$message = '';
+$error = '';
+if (isset($_GET['message'])) {
+    $message = htmlspecialchars($_GET['message']);
+}
+if (isset($_GET['error'])) {
+    $error = htmlspecialchars($_GET['error']);
+}
+
 ?>
 
 <!doctype html>
@@ -31,6 +50,19 @@ include '../PHP/select.php';
 <!-- Page Title -->
 <div class="container text-center my-4">
   <h2 class="fw-bold text-success">Shop All Flowers</h2>
+    <?php if ($message): ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <?php echo $message; ?>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+      <?php endif; ?>
+      
+      <?php if ($error): ?>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <?php echo $error; ?>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+      <?php endif; ?>
 </div>
 
 <!-- Products Grid -->
@@ -57,9 +89,9 @@ include '../PHP/select.php';
               <span class="price">$<?php echo $row['Price']; ?></span>
             </div>
 
-            <form action="../PHP/addToCart.php" method="POST">
+            <form action="../PHP/addToCart.php" method="POST" class="add-to-cart-form">
               <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
-              <button class="btn btn-success w-100">Add to Cart</button>
+              <button type="submit" class="btn btn-success w-100">Add to Cart</button>
             </form>
 
           </div>
