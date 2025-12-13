@@ -3,10 +3,9 @@
     include 'connection.php';
     include 'CartFunctions.php';
 
-    // TEMP: set a test user if not logged in (remove in production)
-    if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'] ;
-        header('Location: ../HTML/login.html');
+if (!isset($_SESSION['user_id'])) {
+        $_SESSION['user_id'];
+        header('Location: ../HTML/login.php');
         exit();
     }
 

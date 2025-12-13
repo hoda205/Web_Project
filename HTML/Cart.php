@@ -3,8 +3,8 @@
     include '../PHP/connection.php';
     include '../PHP/CartFunctions.php';
 
-    if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'] ;
+if (!isset($_SESSION['user_id'])) {
+        $_SESSION['user_id'];
         header('Location: ../HTML/login.php');
         exit();
     }

@@ -24,10 +24,10 @@ if(isset($_POST['mail']) && isset($_POST['pass'])) {
         // الأفضل: إذا كانت مشفرة بـ password_hash()
         if(password_verify($password, $row['Password'])) {
             
-            $_SESSION['User_id'] = $row['User_id'];
-            $_SESSION['Name'] = $row['Name'];
-            $_SESSION['Email'] = $row['Email'];
-            $_SESSION['Role'] = $row['Role'];
+            $_SESSION['user_id'] = $row['User_id'];
+            $_SESSION['name'] = $row['Name'];
+            $_SESSION['email'] = $row['Email'];
+            $_SESSION['role'] = $row['Role'];
             
             // توجيه المستخدم حسب الدور
             if($row['Role'] === 'admin' || $row['Role'] === 'Admin') {

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'connection.php';
 
 if (isset($_POST['register'])) {
@@ -37,6 +38,20 @@ if (isset($_POST['register'])) {
     mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPassword);
 
     if (mysqli_stmt_execute($stmt)) {
+        // Log the user in immediately after successful registration
+        $user_id = mysqli_insert_id($conn);
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['name'] = $username;
+        $_SESSION['email'] = $email;
+        $_SESSION['role'] = 'customer';
+
+        // Create a pending order for this new user (if not created elsewhere)
+        $orderSql = "INSERT INTO `order` (Total, User_Id, Status) VALUES (0, ?, 'Pending')";
+        $orderStmt = mysqli_prepare($conn, $orderSql);
+        mysqli_stmt_bind_param($orderStmt, "i", $user_id);
+        mysqli_stmt_execute($orderStmt);
+        mysqli_stmt_close($orderStmt);
+
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
         header("Location: ../HTML/home.html?registered=1");

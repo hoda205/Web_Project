@@ -6,8 +6,8 @@ include '../PHP/CartFunctions.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'] ;
-        header('Location: ../HTML/login.html');
+        $_SESSION['user_id'];
+        header('Location: ../HTML/login.php');
         exit();
     }
 
