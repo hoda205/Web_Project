@@ -38,10 +38,10 @@ if (isset($_GET['error'])) {
 <nav class="navbar shadow-sm py-3 position-relative">
   <div class="container d-flex justify-content-center align-items-center">
     <ul class="navbar-nav d-flex flex-row gap-5 fw-semibold m-0">
-      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="../HTML/home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="../HTML/product.php">Shop</a></li>
+      <li class="nav-item"><a class="nav-link" href="../HTML/contact.php">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="../HTML/Cart.php">Cart</a></li>
     </ul>
     <h1 class="text-success m-0 position-absolute start-0 ps-3">Fleurina</h1>
   </div>
@@ -81,10 +81,6 @@ if (isset($_GET['error'])) {
           <div class="card-body text-center">
             <h5 class="card-title"><?php echo $row['Name']; ?></h5>
 
-            <p class="text-muted small mb-2">
-              <?php echo $row['Describtion']; ?>
-            </p>
-
             <div class="mb-2">
               <span class="price">$<?php echo $row['Price']; ?></span>
             </div>
@@ -93,6 +89,12 @@ if (isset($_GET['error'])) {
               <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
               <button type="submit" class="btn btn-success w-100">Add to Cart</button>
             </form>
+
+             <!-- Details Button  ناقص تعديل اسم الصفحة بصفحة ياسمين محمد-->
+            <a href="productDetails.php?id=<?php echo $row['P_Id']; ?>" 
+               class="btn btn-outline-secondary w-100">
+              View Details
+            </a>
 
           </div>
 
