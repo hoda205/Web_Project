@@ -1,26 +1,19 @@
-function showPage(pageId) {
+function setPage(pageId, sidebarId) {
 
-    document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
+    document.querySelectorAll('.page').forEach(page => page.classList.add('display-none'));
+
+    const activePage = document.getElementById(pageId);
+    if (activePage) activePage.classList.remove('display-none');
+
+    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+
+    const activeMenu = document.getElementById(sidebarId);
+    if (activeMenu) activeMenu.classList.add('active');
+
+
+    fetch("../PHP/savePage.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "pageId=" + encodeURIComponent(pageId) + "&sidebar=" + encodeURIComponent(sidebarId)
     });
-    document.getElementById(pageId).style.display = 'block';
-    localStorage.setItem("lastPage", pageId);
-}
-
-document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', () => {
-        document.querySelectorAll('.menu-item').forEach(i => i.classList.remove("active"));
-        item.classList.add("active");
-    });
-});
-
-function lastSession(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
-    });
-    document.getElementById(pageId).style.display = 'block';
-    localStorage.setItem("lastPage", pageId);
-
-    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove("active"));
-        item.classList.add("active");
 }

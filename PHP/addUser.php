@@ -7,7 +7,7 @@ if(isset($_POST['save'])){
         $username = $_POST['Username'];
         $email = $_POST['Email'];
         $password = $_POST['Password'];
-        // password_hash($_POST['Password'], PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $role = $_POST['Role'];
 
         $sql = "SELECT * FROM users WHERE Email = '$email'";
@@ -17,7 +17,8 @@ if(isset($_POST['save'])){
             exit;
         }
 
-        $sql = "INSERT INTO users ( Name, Email, Password, Role) VALUES ('$username' , '$email' , '$password' , '$role')";
+        
+        $sql = "INSERT INTO users ( Name, Email, Password, Role) VALUES ('$username' , '$email' , '$hashedPassword' , '$role')";
         if (mysqli_query($conn, $sql)) {
             header("Location: ../HTML/addAdminAndCustomer.php?successAdd=1");
             exit;
@@ -34,7 +35,11 @@ if(isset($_POST['save'])){
 
         $username = $_POST['Username'] ?: $row['Name'];
         $email = $_POST['Email'] ?: $row['Email'];
-        $password = $_POST['Password'] ?: $row['password'];
+        if (!empty($_POST['Password'])) {
+            $hashedPassword = password_hash($_POST['Password'], PASSWORD_BCRYPT);
+        }
+        else $hashedPassword = $row['Password'];
+
         if($_POST['Email'] != $row['Email'] && !empty($_POST['Email'])){
             $sql = "SELECT * FROM users WHERE Email = '$email'";
             $result =mysqli_query($conn,$sql);
@@ -44,7 +49,7 @@ if(isset($_POST['save'])){
                 exit;
             }
         }
-        $sql = "UPDATE users SET Name='$username' ,Email= '$email', Password ='$password' WHERE User_id = '$id'";
+        $sql = "UPDATE users SET Name='$username' ,Email= '$email', Password ='$hashedPassword' WHERE User_id = '$id'";
         if(mysqli_query($conn,$sql)){
             header("Location: ../HTML/dashboard.php");
             exit;

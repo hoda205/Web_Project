@@ -1,6 +1,6 @@
 * {
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -37,13 +37,12 @@ a:hover{
 }
 
 /* Cutum Style  */
-.sidebar h1 {
-    color: #f8c1d0;
+.text-dark-pink {
+    color: #f57f9e;
 }
 
 .sidebar {
     background: #FFFAF0;
-    /* width: 17%; */
     height: 100vh;
     padding: 20px;
 }

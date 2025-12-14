@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
 include '../PHP/connection.php';
 $descValue = "";
 if (isset($_GET['id'])) {
@@ -17,6 +19,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../CSS/dashboardStyle.css">
     <title>Add/Edit Products</title>
 </head>
@@ -24,7 +27,10 @@ if (isset($_GET['id'])) {
 <body class="content">
     <main>
         <div class="page container" id="addEditProduct">
-            <h2 class="my-4">Add /Edit Product</h2>
+            <div class="d-flex align-items-center">
+                <a href="dashboard.php" class="text-decoration-none text-black fs-1 me-3"><i class="fa-solid fa-left-long"></i></a>
+                <h2 class="my-4">Add /Edit Product</h2>
+            </div>
             <div class="mx-5 m-auto rounded-3 bg-bage py-3 px-3 shadow">
                 <form action="../PHP/addProduct.php" method="POST" enctype="multipart/form-data">
                     <input type="text" name="Id" value="<?php echo isset($_GET['id'])? $_GET['id']:''; ?>" readonly hidden>
@@ -78,7 +84,6 @@ if (isset($_GET['id'])) {
                     }
                     ?>
                     <button name="save" type="submit" class="px-4 py-1 rounded bg-green text-white mb-3">Save</button>
-                    <a href="./dashboard.php" class="px-4 py-2 rounded bg-green text-white mb-3 text-decoration-none ahover">Back</a>
                 </form>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <?php
-include '../PHP/select.php'
+session_start();
+if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
+include '../PHP/select.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,18 +22,23 @@ include '../PHP/select.php'
         <div class="row">
             <!-- Sidebar Start -->
             <aside class="sidebar col-2 bg-bage">
-                <h1 class="mb-5">Fleurina</h1>
+                <h1 class="mb-5 text-dark-pink">Fleurina</h1>
                 <ul>
-                    <li onclick="showPage('productsManagement')" class="menu-item" data-section="productsManagement">Products Management</li>
-                    <li onclick="showPage('ordersManagement')" class="menu-item" data-section="ordersManagement">ordersManagement</li>
-                    <li onclick="showPage('message')" class="menu-item" data-section="message">Messages</li>
-                    <li onclick="showPage('adminsAccounts')" class="menu-item" data-section="adminsAccounts">Admins Account</li>
-                    <li onclick="showPage('customers')" class="menu-item" data-section="customers">Customers Account</li>
+                    <li onclick="setPage('productsManagement', 'one')" class="menu-item" id="one">Products Management</li>
+                    <li onclick="setPage('ordersManagement', 'two')" class="menu-item" id="two">Orders Management</li>
+                    <li onclick="setPage('message', 'three')" class="menu-item" id="three">Messages</li>
+                    <li onclick="setPage('adminsAccounts', 'four')" class="menu-item" id="four">Admins Account</li>
+                    <li onclick="setPage('customers', 'five')" class="menu-item" id="five">Customers Account</li>
                 </ul>
             </aside>    
             <!-- Sidebar End -->
             <!-- Content Area Start  -->
             <div class="content col-10">
+                <div class="d-flex justify-content-end align-items-center ">
+                    <span class="text-dark-pink"></span>
+                    <p class="p-0 m-0">Welcome, <?php echo '<span class="text-danger">' . $_SESSION['name'] . '</span>' ?></p>
+                    <a href="../PHP/logout.php" class="btn btn-danger ms-3"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
                 <!-- Products Management Start -->
                 <div class="page display-none" id="productsManagement">
                     <h2 class="my-4 ">Product Management</h2>
@@ -223,6 +230,17 @@ include '../PHP/select.php'
         </div>
     </main>
     <script src="../JS/script.js"></script>
+    <script>
+
+        <?php if(isset($_SESSION['pageId'], $_SESSION['sidebar'])): ?>
+            setPage("<?php echo $_SESSION['pageId']; ?>", "<?php echo $_SESSION['sidebar']; ?>");
+        <?php else: ?>
+            setPage('productsManagement', 'one'); 
+        <?php endif; ?>
+
+    </script>
+
+
 </body>
 
 </html>
