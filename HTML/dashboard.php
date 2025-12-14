@@ -1,6 +1,7 @@
 <?php
-session_start();
-if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
+// لازم تكون عامل تسجيل دخول عشان الداشبورد يتفتح
+// session_start();
+// if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
 include '../PHP/select.php';
 ?>
 <!DOCTYPE html>
@@ -34,11 +35,16 @@ include '../PHP/select.php';
             <!-- Sidebar End -->
             <!-- Content Area Start  -->
             <div class="content col-10">
-                <div class="d-flex justify-content-end align-items-center ">
+                <header class="d-flex justify-content-end align-items-center ">
                     <span class="text-dark-pink"></span>
-                    <p class="p-0 m-0">Welcome, <?php echo '<span class="text-danger">' . $_SESSION['name'] . '</span>' ?></p>
+                    <p class="p-0 m-0">
+                        Welcome,
+                        <span class="text-danger">
+                            <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>
+                        </span>
+                    </p>
                     <a href="../PHP/logout.php" class="btn btn-danger ms-3"><i class="fa-solid fa-right-from-bracket"></i></a>
-                </div>
+                </header>
                 <!-- Products Management Start -->
                 <div class="page display-none" id="productsManagement">
                     <h2 class="my-4 ">Product Management</h2>
