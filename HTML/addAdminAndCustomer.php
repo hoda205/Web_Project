@@ -1,6 +1,7 @@
-<?php
-session_start();
-if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
+<?php 
+// و دول كمان
+// session_start();
+// if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
