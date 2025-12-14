@@ -1,15 +1,18 @@
 <?php
 include '../PHP/select.php';
 session_start();
-include '../PHP/connection.php';
-include '../PHP/CartFunctions.php';
+    include '../PHP/connection.php';
+    include '../PHP/CartFunctions.php';
+
+    if (!isset($_SESSION['user_id'])) {
+            $_SESSION['user_id'];
+            header('Location: ../HTML/login.php');
+            exit();
+        }
+     $user_id = $_SESSION['user_id'];
+    $cart_count = getCartCount($user_id);
 
 // Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'];
-        header('Location: ../HTML/login.php');
-        exit();
-    }
 
 $message = '';
 $error = '';
@@ -30,12 +33,15 @@ if (isset($_GET['error'])) {
   <title>Fleurina - Shop</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../CSS/product.css" rel="stylesheet">
+  
+    <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
+    <link href="../CSS/product.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/navStyle.css">
 </head>
 <body>
 
 <!-- Nav Bar -->
-<nav class="navbar shadow-sm py-3 position-relative">
+<!-- <nav class="navbar shadow-sm py-3 position-relative">
   <div class="container d-flex justify-content-center align-items-center">
     <ul class="navbar-nav d-flex flex-row gap-5 fw-semibold m-0">
       <li class="nav-item"><a class="nav-link" href="../HTML/home.html">Home</a></li>
@@ -45,7 +51,10 @@ if (isset($_GET['error'])) {
     </ul>
     <h1 class="text-success m-0 position-absolute start-0 ps-3">Fleurina</h1>
   </div>
-</nav>
+</nav> -->
+<?php 
+include 'navbar.php';
+?>
 
 <!-- Page Title -->
 <div class="container text-center my-4">
@@ -79,20 +88,20 @@ if (isset($_GET['error'])) {
           </div>
 
           <div class="card-body text-center">
-            <h5 class="card-title"><?php echo $row['Name']; ?></h5>
+            <h5 class="card-title fs-1"><?php echo $row['Name']; ?></h5>
 
             <div class="mb-2">
-              <span class="price">$<?php echo $row['Price']; ?></span>
+              <span class="price fs-3">$<?php echo $row['Price']; ?></span>
             </div>
 
             <form action="../PHP/addToCart.php" method="POST" class="add-to-cart-form">
               <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
-              <button type="submit" class="btn btn-success w-100">Add to Cart</button>
+              <button type="submit" class="btn btn-success w-100 fs-3">Add to Cart</button>
             </form>
 
              <!-- Details Button  ناقص تعديل اسم الصفحة بصفحة ياسمين محمد-->
             <a href="productDetails.php?id=<?php echo $row['P_Id']; ?>" 
-               class="btn btn-outline-secondary w-100">
+               class="btn btn-outline-secondary w-100 fs-3 mt-1">
               View Details
             </a>
 

@@ -1,18 +1,18 @@
 <?php
-    session_start();
+session_start();
     include '../PHP/connection.php';
     include '../PHP/CartFunctions.php';
-
-if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'];
-        header('Location: ../HTML/login.php');
-        exit();
-    }
+    
+    if (!isset($_SESSION['user_id'])) {
+            $_SESSION['user_id'];
+            header('Location: ../HTML/login.php');
+            exit();
+        }
 
     $user_id = $_SESSION['user_id'];
+    $cart_count = getCartCount($user_id);
 
     $cart_data = getCartItems($user_id);
-    $cart_count = getCartCount($user_id);
     $cart_total = getCartTotal($user_id);
 
 ?>
@@ -25,13 +25,15 @@ if (!isset($_SESSION['user_id'])) {
     <title>Your Cart</title>
     <link rel="stylesheet" href="../CSS/cartstyle.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-
+    <link rel="stylesheet" href="../CSS/navStyle.css">
     <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-
-    <header>
+    <?php 
+    include 'navbar.php';
+    ?>
+    <!-- <header>
         <input type="checkbox" name="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
@@ -46,7 +48,7 @@ if (!isset($_SESSION['user_id'])) {
             <?php endif;?> </a>
              
         </nav>
-    </header>
+    </header> -->
 
 
 

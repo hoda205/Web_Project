@@ -1,3 +1,12 @@
+<?php 
+session_start();
+    include '../PHP/connection.php';
+    include '../PHP/CartFunctions.php';
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $cart_count = getCartCount($user_id); 
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +17,14 @@
     <title>florine website</title>
     <link rel="stylesheet" href="../CSS/homeStyle.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/navStyle.css">
 
     <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
-    https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap
 
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <input type="checkbox" name="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
@@ -28,12 +37,17 @@
             <a href="../HTML/login.php">login/sign up</a></li>
             <i class="fa-solid fa-bag-shopping"></i>
         </nav>
-    </header>
+    </header> -->
+    <?php 
+include 'navbar.php';
+?>
     <section class="home">
         <div class="content">
             <h3>Fresh Flowers,<br> Delivered with Love</h3>
             <p>Discover the bueauty of nature with our exquisite flower arrangements, perfect for every occasion.</p>
-            <button class="btn">Shop Now</button>
+            <form action="./product.php" method="post">
+                <button class="btn" >Shop Now</button>
+            </form>
 
         </div>
     </section>
@@ -154,7 +168,7 @@
 
 
 
-    <section class="last">
+    <!-- <section class="last">
         <footer>
             <div>
                 <h4> flourina</h4>
@@ -182,6 +196,9 @@
             </div>
         </footer>
         <div class="rights" align="center"> <br> &copf; 2025 the flourina shop all rights reserved </div>
-    </section>
+    </section> -->
+    <?php
+    include 'footer.php';
+    ?>
     <script src="../JS/bootstrap.bundle.min.js"></script>
 </body>

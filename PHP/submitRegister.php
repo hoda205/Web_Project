@@ -54,7 +54,7 @@ if (isset($_POST['register'])) {
 
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        header("Location: ../HTML/home.html?registered=1");
+        header("Location: ../HTML/home.php?registered=1");
         exit;
     } else {
         mysqli_stmt_close($stmt);

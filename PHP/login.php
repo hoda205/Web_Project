@@ -33,7 +33,7 @@ if(isset($_POST['mail']) && isset($_POST['pass'])) {
             if($row['Role'] === 'admin' || $row['Role'] === 'Admin') {
                 header("Location: ../HTML/dashboard.php");
             } else {
-                header("Location: ../HTML/home.html"); // أو صفحة المتجر
+                header("Location: ../HTML/home.php"); // أو صفحة المتجر
             }
             exit();
             

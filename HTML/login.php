@@ -16,7 +16,7 @@
 <header>
     <div class="header-left">
         <a href="#" class="logo">Fleurina</a>
-        <a href="../HTML/home.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <a href="../HTML/home.php" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
     </div>
 </header>
 

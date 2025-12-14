@@ -1,3 +1,12 @@
+<?php 
+session_start();
+    include '../PHP/connection.php';
+    include '../PHP/CartFunctions.php';
+  if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $cart_count = getCartCount($user_id); 
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +16,7 @@
     <meta name="viewport">
     <title>florine website</title>
     <link rel="stylesheet" href="../CSS/contectStyle.css">
+    <link rel="stylesheet" href="../CSS/navStyle.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
 
     <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
@@ -16,7 +26,7 @@
 </head>
 
 <body>
-    <header class="shadow">
+    <!-- <header class="shadow">
         <input type="checkbox" name="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
@@ -29,7 +39,10 @@
             <a href="#">login/sign up</a></li>
             <i class="fa-solid fa-bag-shopping"></i>
         </nav>
-    </header>
+    </header> -->
+    <?php 
+include 'navbar.php';
+?>
 
    <section class="home shadow">
         <div class="content">
@@ -110,11 +123,11 @@
    </div>
    </section>
 
-  <footer style="background-color:#FCEEEF;">
+  <!-- <footer style="background-color:#FCEEEF;">
     <div class="container">
         <div class="row">
             <div class=" col-lg-4 col-sm-12 d-flex flex-column">
-              <a href="home.html" class="fs-3">Home</a>
+              <a href="home.php" class="fs-3">Home</a>
              <a href="contect.html" class="fs-3">Contact</a>
              <a href="#" class="fs-3">Shop</a>
              <a href="#" class="fs-3">Cart</a>
@@ -148,8 +161,10 @@
   </footer>
   
   <footer class="footer2 d-flex justify-content-center align-items-center" >
-    <p class="mb-0 py-3"> &copy; 2024 Fleurina. All rights reserved.</p>
-
+    <p class="mb-0 py-3"> &copy; 2024 Fleurina. All rights reserved.</p> -->
+    <?php
+    include 'footer.php';
+    ?>
   </footer>
 
     <script src="../JS/bootstrap.bundle.min.js"></script>

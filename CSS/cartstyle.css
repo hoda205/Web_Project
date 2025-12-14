@@ -136,16 +136,17 @@ header .fa-bars{
     
 }
 
-.cart-badge {
-    background-color: #f3abab;;
+ .cart-badge {
+         background-color: #f3abab;
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
-    font-size: 12px;
+    font-size: 10px;
     position: absolute;
-    top: 20px;
-    right: 120px;
-}
+    bottom: 45%;
+    left: 81%;
+    border: 3px solid white;
+ }
 
 @media (max-width:470px) {
     
@@ -184,7 +185,6 @@ header .fa-bars{
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-        margin-top:95px;
         position: relative;
     }
 
