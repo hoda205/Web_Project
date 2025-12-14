@@ -3,11 +3,11 @@ echo '<footer style="background-color:#FCEEEF;">
     <div class="container">
         <div class="row">
             <div class=" col-lg-4 col-sm-12 d-flex flex-column">
-              <a href="home.php" class="fs-3">Home</a>
-             <a href="contect.html" class="fs-3">Contact</a>
-             <a href="#" class="fs-3">Shop</a>
-             <a href="#" class="fs-3">Cart</a>
-             <a href="#" class="fs-3">Login/Sign Up</a>
+              <a href="./home.php" class="fs-3">Home</a>
+             <a href="./contact.php" class="fs-3">Contact</a>
+             <a href="./product.php" class="fs-3">Shop</a>
+             <a href="./Cart.php" class="fs-3">Cart</a>
+             <a href="./login.php" class="fs-3">Login/Sign Up</a>
             </div>
             <div class=" col-lg-4 col-sm-12 d-flex justify-content-center align-items-center" >
               <a href="#"><i class="fa-brands fa-square-facebook" style="font-size: 3rem;  color: rgb(245, 151, 151);"></i></a>

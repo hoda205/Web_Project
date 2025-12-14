@@ -75,6 +75,7 @@ include 'navbar.php';
       </p>
         <form action="../PHP/addToCart.php" method="POST">
             <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
+            <input type="hidden" name="details" value="1">
             <button class="cart-btn">Add to Cart</button>
         </form>
         

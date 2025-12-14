@@ -24,6 +24,10 @@ if (!isset($_SESSION['user_id'])) {
     $result = addToCart($user_id, $product_id, 1);
     if ($result) {
         // Redirect back to products page or cart
+        if (isset($_POST['details'])){
+            header('Location: ../HTML/productDetails.php?success=added&id=' . $product_id);
+            exit();
+        }
         header('Location: ../HTML/product.php?success=added');
         exit();
     } else {
