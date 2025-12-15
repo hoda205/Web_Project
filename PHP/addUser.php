@@ -35,6 +35,7 @@ if(isset($_POST['save'])){
 
         $username = $_POST['Username'] ?: $row['Name'];
         $email = $_POST['Email'] ?: $row['Email'];
+        $role = $_POST['Role'] ?: $row['Role'];
         if (!empty($_POST['Password'])) {
             $hashedPassword = password_hash($_POST['Password'], PASSWORD_BCRYPT);
         }
@@ -49,7 +50,7 @@ if(isset($_POST['save'])){
                 exit;
             }
         }
-        $sql = "UPDATE users SET Name='$username' ,Email= '$email', Password ='$hashedPassword' WHERE User_id = '$id'";
+        $sql = "UPDATE users SET Name='$username' ,Email= '$email', Password ='$hashedPassword', Role ='$role' WHERE User_id = '$id'";
         if(mysqli_query($conn,$sql)){
             header("Location: ../HTML/dashboard.php");
             exit;

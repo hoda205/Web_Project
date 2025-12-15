@@ -1,7 +1,7 @@
 <?php
 // لازم تكون عامل تسجيل دخول عشان الداشبورد يتفتح
 session_start();
-if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
+if($_SESSION['role'] != 'admin')header('Location: ../HTML/login.php');
 include '../PHP/select.php';
 ?>
 <!DOCTYPE html>
