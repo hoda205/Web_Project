@@ -87,7 +87,7 @@ $order = mysqli_fetch_assoc($orderDetails)
                         while($row = mysqli_fetch_assoc($cart)): ?>
                         <tr>
                             <td><? echo $i++; ?></td>
-                            <td><img src="../images/<php echo $row['pImg']; ?>" width="100"></td>
+                            <td><img src="../images/<?php echo $row['pImg']; ?>" width="100"></td>
                             <td><?php echo $row['Name']; ?></td>
                             <td>$<?php echo $row['Price']; ?></td>
                             <td><?php echo $row['Quantity']; ?></td>
@@ -96,8 +96,9 @@ $order = mysqli_fetch_assoc($orderDetails)
                         <?php endwhile; ?>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td colspan="5" ><b>Total</b></td>
+                        <tr class="">
+                            <td></td>
+                            <td colspan="4"  class="py-3 fs-5">Total</td>
                             <td>$<?php echo $order['Total']?></td>
                         </tr>
                     </tfoot>

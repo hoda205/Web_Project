@@ -47,8 +47,9 @@ include 'navbar.php';
    <section class="home shadow">
         <div class="content">
             <h5>Get in Touch with Us</h5>            
-            <button class="btn">Shop Now</button>
-
+            <form action="./product.php" method="post">
+                <button class="btn" >Shop Now</button>
+            </form>
         </div>
     </section>
 
@@ -165,7 +166,6 @@ include 'navbar.php';
     <?php
     include 'footer.php';
     ?>
-  </footer>
 
     <script src="../JS/bootstrap.bundle.min.js"></script>
     

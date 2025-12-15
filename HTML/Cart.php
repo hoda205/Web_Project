@@ -135,7 +135,7 @@ session_start();
                 </tr>
             </table>
 
-            <form action="../PHP/CheckBill.php" method="POST" class="add-to-cart-form">
+            <form action="../HTML/CheckBill.php" method="POST" class="add-to-cart-form">
             <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
             <button id="CheckoutBtn" >Proceed to Checkout</button>
             </form>

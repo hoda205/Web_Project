@@ -1,7 +1,7 @@
 <?php
 // لازم تكون عامل تسجيل دخول عشان الداشبورد يتفتح
-// session_start();
-// if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
+session_start();
+if(!$_SESSION['role']== 'Admin')header('Location: ../HTML/login.php');
 include '../PHP/select.php';
 ?>
 <!DOCTYPE html>
@@ -114,8 +114,8 @@ include '../PHP/select.php';
                                         </td>
                                         <td><?php echo $row['Total']; ?>$</td>
                                         <td >
-                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Accepted" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-check text-success"></i></a>
-                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Rejected" <?php echo $row['Status']!='Pending'?'hidden':'' ?>><i class="fa-solid fa-circle-xmark text-danger text-decoration-none "></i></a>
+                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Accepted" <?php echo $row['Status']!='Submitted'?'hidden':'' ?>><i class="fa-solid fa-circle-check text-success"></i></a>
+                                            <a href="../PHP/statues.php?orderId=<?php echo $row['Order_Id']?>&status=Rejected" <?php echo $row['Status']!='Submitted'?'hidden':'' ?>><i class="fa-solid fa-circle-xmark text-danger text-decoration-none "></i></a>
                                             <a href="../PHP/delete.php?id=<?php echo $row['Order_Id']?>&table=order&page=dashboard.php"  class="ms-2 text-black"><i class="fa-solid fa-trash"></i></a>
                                             <a class="ahover px-1 py-1 rounded bg-green text-white mb-3 text-decoration-none" href="./orderDetails.php?orderId=<?php echo $row['Order_Id']?>">Show</a>
                                         </td>
