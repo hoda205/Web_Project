@@ -58,7 +58,8 @@ include 'navbar.php';
 
 <!-- Page Title -->
 <div class="container text-center my-4">
-  <h2 class="fw-bold text-success">Shop All Flowers</h2>
+  <!-- <h2 class="fw-bold text-success">Shop All Flowers</h2> -->
+   <h2 class="fw-bold" style="color:#f7b3b3;">Shop All Flowers</h2>
     <?php if ($message): ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
           <?php echo $message; ?>
@@ -90,13 +91,28 @@ include 'navbar.php';
           <div class="card-body text-center">
             <h5 class="card-title fs-1"><?php echo $row['Name']; ?></h5>
 
-            <div class="mb-2">
+            <!-- <div class="mb-2">
               <span class="price fs-3">$<?php echo $row['Price']; ?></span>
+            </div> -->
+            <div class="mb-2">
+              <span class="price fs-3 text-dark fw-bold">
+                $<?php echo $row['Price']; ?>
+              </span>
             </div>
+
 
             <form action="../PHP/addToCart.php" method="POST" class="add-to-cart-form">
               <input type="hidden" name="product_id" value="<?php echo $row['P_Id']; ?>">
-              <button type="submit" class="btn btn-success w-100 fs-3">Add to Cart</button>
+              <!-- <button type="submit" class="btn btn-success w-100 fs-3">Add to Cart</button> -->
+               <button 
+                type="submit" 
+                class="btn w-100 fs-3"
+                style="background-color:#f7b3b3; color:white;"
+                onmouseover="this.style.backgroundColor='#f39aa5'"
+                onmouseout="this.style.backgroundColor='#f7b3b3'">
+                Add to Cart
+              </button>
+
             </form>
 
              <!-- Details Button -->
