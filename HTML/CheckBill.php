@@ -76,12 +76,7 @@ session_start();
     <!-- Order Summary -->
     <div class="order-section">
         <h2 class="section-title">Your Order</h2>
-        <?php if (empty($cart_data['items'])): ?>
-        <div class="order-item">
-            <span>Your cart is empty</span>
-            <span></span>
-        </div>
-        <?php else: ?>
+        <?php if (!empty($cart_data['items'])): ?>
         <?php foreach ($cart_data['items'] as $item): ?>
             <?php $item_total = $item['Price'] * $item['Quantity']; ?>
             <div class="order-item">
