@@ -62,7 +62,7 @@ include 'navbar.php';
                 <!-- Card 1 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="fav-card p-3">
-                        <img src="../images/flow1.jpeg" class="img-fluid rounded" alt="">
+                        <img src="../images/home1.jpg" class="img-fluid rounded" alt="">
                         <h5 class="mt-3">Blush Radiance Bouquet</h5>
                         <p class="price">$65.00</p>
                     </div>
@@ -71,7 +71,7 @@ include 'navbar.php';
                 <!-- Card 2 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="fav-card p-3">
-                        <img src="../images/flow2.jpeg" class="img-fluid rounded" alt="">
+                        <img src="../images/home2.jpg" class="img-fluid rounded" alt="">
                         <h5 class="mt-3">Classic Elegance Box</h5>
                         <p class="price">$80.00</p>
                     </div>
@@ -80,7 +80,7 @@ include 'navbar.php';
                 <!-- Card 3 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="fav-card p-3">
-                        <img src="../images/flow3.jpeg" class="img-fluid rounded" alt="">
+                        <img src="../images/home3.jpg" class="img-fluid rounded" alt="">
                         <h5 class="mt-3">Spring Awakening Basket</h5>
                         <p class="price">$75.00</p>
                     </div>
@@ -89,7 +89,7 @@ include 'navbar.php';
                 <!-- Card 4 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="fav-card p-3">
-                        <img src="../images/flow4.jpeg" class="img-fluid rounded" alt="">
+                        <img src="../images/home4.jpg" class="img-fluid rounded" alt="">
                         <h5 class="mt-3">Sweetheart Surprise Arrangement</h5>
                         <p class="price">$78.00</p>
                     </div>
