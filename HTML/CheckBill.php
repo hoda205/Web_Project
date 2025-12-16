@@ -4,10 +4,9 @@ session_start();
     include '../PHP/CartFunctions.php';
     
     if (!isset($_SESSION['user_id'])) {
-            $_SESSION['user_id'];
             header('Location: ../HTML/login.php');
             exit();
-        }
+    }
 
     $user_id = $_SESSION['user_id'];
     $cart_count = getCartCount($user_id);
@@ -57,7 +56,7 @@ session_start();
     <div class="billing-section">
         <h2 class="section-title">Billing Info</h2>
         <form action="../PHP/sendOrder.php" method="post">
-            <input type="hidden" name="order_id" value="<?php echo $order_id ?>" >
+            <input type="hidden" name="order_id" value="<?php echo htmlspecialchars($order_id); ?>" />
             
             <div class="form-group">
                 <label class="fs-3">Phone</label>
@@ -77,10 +76,20 @@ session_start();
     <!-- Order Summary -->
     <div class="order-section">
         <h2 class="section-title">Your Order</h2>
+        <?php if (empty($cart_data['items'])): ?>
         <div class="order-item">
-            <span>Sample Product × 1</span>
-            <span>$99.99</span>
+            <span>Your cart is empty</span>
+            <span></span>
         </div>
+        <?php else: ?>
+        <?php foreach ($cart_data['items'] as $item): ?>
+            <?php $item_total = $item['Price'] * $item['Quantity']; ?>
+            <div class="order-item">
+                <span><?php echo htmlspecialchars($item['Name']); ?> x <?php echo (int)$item['Quantity']; ?></span>
+                <span>$<?php echo number_format($cart_data['subtotal'], 2); ?></span>
+            </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <div class="order-item">
             <span>Shipping</span>
             <span>Free</span>
