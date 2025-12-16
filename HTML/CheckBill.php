@@ -77,11 +77,12 @@ session_start();
     <div class="order-section">
         <h2 class="section-title">Your Order</h2>
         <?php if (!empty($cart_data['items'])): ?>
+
         <?php foreach ($cart_data['items'] as $item): ?>
             <?php $item_total = $item['Price'] * $item['Quantity']; ?>
             <div class="order-item">
                 <span><?php echo htmlspecialchars($item['Name']); ?> x <?php echo (int)$item['Quantity']; ?></span>
-                <span>$<?php echo number_format($cart_data['subtotal'], 2); ?></span>
+                <span>$<?php echo number_format($item['Price'], 2); ?> &nbsp; | &nbsp; $<?php echo number_format($item_total, 2); ?></span>
             </div>
         <?php endforeach; ?>
         <?php endif; ?>
