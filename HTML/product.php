@@ -99,7 +99,7 @@ include 'navbar.php';
               <button type="submit" class="btn btn-success w-100 fs-3">Add to Cart</button>
             </form>
 
-             <!-- Details Button  ناقص تعديل اسم الصفحة بصفحة ياسمين محمد-->
+             <!-- Details Button -->
             <a href="productDetails.php?id=<?php echo $row['P_Id']; ?>" 
                class="btn btn-outline-secondary w-100 fs-3 mt-1">
               View Details

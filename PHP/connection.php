@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "flower_shopdb";
+$dbname = "final_flower_shop_db";
 // هنا بيعمل conntection بالداتا بيز الي عملناها 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // لو حصل خطأ في الاتصال 
