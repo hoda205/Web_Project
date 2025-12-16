@@ -18,6 +18,8 @@ session_start();
     <link rel="stylesheet" href="../CSS/homeStyle.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/navStyle.css">
+    <link rel="stylesheet" href="../CSS/contectStyle.css">
+    
 
     <script src="https://kit.fontawesome.com/3f7db2a477.js" crossorigin="anonymous"></script>
 
