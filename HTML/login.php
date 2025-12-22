@@ -34,7 +34,7 @@
             <div class="input-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" name="pass" placeholder="Password" required>
-                <a href="#" class="forgot">Forgot Password?</a>
+                <!-- <a href="#" class="forgot">Forgot Password?</a> -->
             </div>
             <button class="login-btn">Login</button>
             <p class="register-text">
